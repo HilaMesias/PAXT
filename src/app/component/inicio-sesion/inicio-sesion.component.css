@@ -1,0 +1,19 @@
+mat-form-field {
+    width: 30%;
+} 
+
+.container{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+} 
+
+.example-full-width{
+    align-self: center;
+}
+
+button{
+    margin: 3px;
+    padding: 1rem;
+    border-radius: 10%;
+}
