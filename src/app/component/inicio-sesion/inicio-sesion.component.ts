@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { ActivatedRoute, Params, Router } from '@angular/router'
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Trabajador } from 'src/app/model/Trabajador';
+import { JwtRequest } from 'src/app/model/jwtRequest';
 import { TrabajadorService } from 'src/app/service/trabajador.service';
 @Component({
   selector: 'app-inicio-sesion',
@@ -12,6 +13,7 @@ export class InicioSesionComponent implements OnInit{
 
   form: FormGroup = new FormGroup({});
   author: Trabajador = new Trabajador();
+  usuario: JwtRequest = new JwtRequest();
   mensaje: string = "";
   id: number = 0;
   edicion: boolean = false;
@@ -37,6 +39,8 @@ export class InicioSesionComponent implements OnInit{
     this.author.id = this.form.value['id'];
     this.author.nombre = this.form.value['nombre'];
     this.author.empresa = this.form.value['empresa'];
+    this.usuario.username = this.form.value['username'];
+    this.usuario.password = this.form.value['password'];
     if (this.form.value['nombre'].length > 0 &&
       this.form.value['empresa'].length > 0) {
 

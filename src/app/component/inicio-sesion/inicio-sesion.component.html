@@ -11,17 +11,17 @@
     <div class="container">
         <div style="text-align: center;">
     
-          <h1>INICIO DE SESIÓN</h1>
+          <h1>INICIAR SESIÓN</h1>
         </div>
         <form [formGroup]="form" (submit)="aceptar()">
     
           <mat-form-field class="example-full-width">
-            <mat-label>Nombre</mat-label>
+            <mat-label>Usuario</mat-label>
             <input matInput required placeholder="Nombre" formControlName="nombre">
           </mat-form-field>
           <br>
           <mat-form-field class="example-full-width">
-            <mat-label>Empresa</mat-label>
+            <mat-label>Contraseña</mat-label>
             <input matInput placeholder="Paxton-MST" formControlName="empresa" required>
           </mat-form-field>
           <br>
