@@ -1,41 +1,18 @@
-<app-navbar></app-navbar>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
- 
-    <div class="container">
+
+      <div class="container mat-elevation-z8">
         <div style="text-align: center;">
-    
           <h1>INICIAR SESIÓN</h1>
         </div>
-        <form [formGroup]="form" (submit)="aceptar()">
-    
-          <mat-form-field class="example-full-width">
-            <mat-label>Usuario</mat-label>
-            <input matInput required placeholder="Nombre" formControlName="nombre">
-          </mat-form-field>
-          <br>
-          <mat-form-field class="example-full-width">
-            <mat-label>Contraseña</mat-label>
-            <input matInput placeholder="Paxton-MST" formControlName="empresa" required>
-          </mat-form-field>
-          <br>
-          
-          <div style="text-align: center;">
-    
-          <button color="primary" mat-raised-button>Aceptar</button>
-          <button class="btn-2" mat-raised-button routerLink="/authors">Cancelar</button>
-          <br>
-          </div>
-          <p>{{mensaje}}</p>
-        </form>
+        <mat-form-field class="example-full-width">
+          <mat-label>Usuario</mat-label>
+          <input matInput  placeholder="Username" [(ngModel)]="username">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput  placeholder="Password" [(ngModel)]="password">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="warn" (click)="login()">Ingresar</button>
       </div>
 
-</body>
-</html>
 
