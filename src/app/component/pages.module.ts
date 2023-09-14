@@ -31,8 +31,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
-    NavbarComponent,
-    RegistrarseComponent,
+    // NavbarComponent,
+    // RegistrarseComponent,
     PerfilComponent,
     ReporteComponent,
     ArchivosComponent,

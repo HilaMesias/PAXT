@@ -19,11 +19,11 @@ export class LoginService {
     return token != null;
 
   }
-  showRole(){
-    let token = sessionStorage.getItem("token");
-    const helper = new JwtHelperService();
-    const decodedToken = helper.decodeToken(token);
-    return decodedToken?.role;
-  }
+  // showRole(){
+  //   let token = sessionStorage.getItem("token");
+  //   const helper = new JwtHelperService();
+  //   const decodedToken = helper.decodeToken(token);
+  //   return decodedToken?.role;
+  // }
 
 }

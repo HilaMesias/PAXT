@@ -12,11 +12,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { InicioSesionComponent } from './component/inicio-sesion/inicio-sesion.component';
+import { RegistrarseComponent } from './component/registrarse/registrarse.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioSesionComponent,
+    RegistrarseComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
