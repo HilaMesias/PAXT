@@ -10,11 +10,13 @@ import { Trabajador } from 'src/app/model/Trabajador';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
+  
 })
 export class NavbarComponent {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
+  hide = true;
 
   constructor(private observer: BreakpointObserver, private aS: TrabajadorService, 
     private router: Router, 

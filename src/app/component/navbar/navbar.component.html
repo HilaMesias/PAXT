@@ -12,19 +12,19 @@
 
 <mat-sidenav-container>
   <mat-sidenav  #sidenav="matSidenav" class="mat-elevation-z8">
-    <button mat-button class="menu-button">
+    <button mat-button class="menu-button" [routerLink]="'/inicioSesion'">
       <mat-icon>home</mat-icon>
       <span>Home</span>
     </button>
-    <button mat-button class="menu-button">
+    <button mat-button class="menu-button" [routerLink]="'/perfil'"> 
       <mat-icon>person</mat-icon>
       <span>Profile</span>
     </button>
-    <button mat-button class="menu-button">
+    <button mat-button class="menu-button" [routerLink]="'/reportes'">
       <mat-icon>info</mat-icon>
       <span>About</span>
     </button>
-    <button mat-button class="menu-button">
+    <button mat-button class="menu-button" [routerLink]="'/home'">
       <mat-icon>help</mat-icon>
       <span>Help</span>
     </button>
@@ -33,49 +33,52 @@
     <!-- <div class="content">
       <router-outlet></router-outlet>
     </div> -->
+    <div style="justify-content: center;">
+        <div style="text-align: center;">
+          <h1>REGISTRARSE</h1>
+      </div>
 
-    <div style="text-align: center;">
-      <h1>REGISTRARSE</h1>
-  </div>
+      
+      <form [formGroup]="form" (submit)="aceptar()">
+        <div style="text-align: center;" class="mat-form-field">
+          <mat-form-field class="example-full-width">
+            <mat-label>Nombre</mat-label>
+            <input matInput required placeholder="Sofia" formControlName="name">
+          </mat-form-field>
+          <br>
+          <mat-form-field class="example-full-width">
+            <mat-label>Área</mat-label>
+            <input matInput placeholder="Arquitectura" formControlName="area" required>
+          </mat-form-field>
+          <br>
+        
+          <mat-form-field class="example-full-width">
+            <mat-label>Usuario</mat-label>
+            <input matInput placeholder="Sofia.Paxton" formControlName="usuario" required>
+          </mat-form-field>
+          <br>
 
-  
-  <form [formGroup]="form" (submit)="aceptar()">
-    <div style="text-align: center;">
-      <mat-form-field class="example-full-width">
-        <mat-label>Nombre</mat-label>
-        <input matInput required placeholder="Nombre" formControlName="nombre">
-      </mat-form-field>
-      <br>
-      <mat-form-field class="example-full-width">
-        <mat-label>Empresa</mat-label>
-        <input matInput placeholder="Paxton-MST" formControlName="empresa" required>
-      </mat-form-field>
-      <br>
-    
-      <mat-form-field class="example-full-width">
-        <mat-label>Usuario</mat-label>
-        <input matInput placeholder="Paxton-MST" formControlName="usuario" required>
-      </mat-form-field>
-      <br>
+          <mat-form-field class="example-full-width">
+            <mat-label>Contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <br>
+        </div>
+        
+        <div style="text-align: center;" class="botones">
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Contraseña</mat-label>
-        <input matInput placeholder="Paxton-MST" formControlName="contrasenia" required>
-      </mat-form-field>
-      <br>
+        <button color="primary" mat-raised-button>Aceptar</button>
+        <button class="btn-2" mat-raised-button routerLink="/authors">Cancelar</button>
+        <br>
+
+        </div>
+
+        <p>{{mensaje}}</p>
+      </form>
     </div>
-    
-    <div style="text-align: center;">
-
-    <button color="primary" mat-raised-button>Aceptar</button>
-    <button class="btn-2" mat-raised-button routerLink="/authors">Cancelar</button>
-    <br>
-
-    </div>
-
-    <p>{{mensaje}}</p>
-  </form>
-  
   </mat-sidenav-content>
 </mat-sidenav-container>
 
